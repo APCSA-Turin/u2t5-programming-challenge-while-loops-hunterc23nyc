@@ -32,10 +32,13 @@ public class WhileLoops {
    public static int countEvensUpTo(int n) {
     int x=0;
     int y =0;
-       while (x<n) { 
+       while (x<=n) { 
         x+=2;
         if (x<=n) {
-        y+=1;
+        y++;
+        }
+        if (x>n) {
+            break;
         }
        }
        return y;
@@ -55,13 +58,13 @@ public class WhileLoops {
     */
    public static int digitSum(int n) {
        int x = 0;
-       int y = 0;
+
        while (n>0) {
-        x= n%10;
+        x+= n%10;
         n/=10;
-        y += x;
+    
        }
-       return y;
+       return x;
    }
 
 
@@ -86,16 +89,16 @@ public class WhileLoops {
     */
 public static int countDownBy(int start, int step) {
 
-    if (step <= 0) {
+    if (step <= 0 || start < 0) {
         return start;
     }
 
-    int x = start;
-    while (start >= step) { 
+ 
+    while (start-step >= 0) { 
         start -= step; 
-        x = start;
+  
     }
-    return x;
+    return start;
 }
 
 
